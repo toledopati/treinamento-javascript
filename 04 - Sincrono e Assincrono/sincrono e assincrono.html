@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+    // Programação Síncrona
+    let a = 1;
+    const b = 2;
+    console.log(a + b); //3
+
+    a = 3;
+    console.log (a + b); //5
+
+    console.log ('#################')
+
+    // Programação Assíncrona
+    let c = 1;
+    const d = 2;
+
+    setTimeout (() =>{
+        console.log (c + d); //3
+    }, 3000);
+
+    c= 3;
+    console.log(c + d); //5
+
+
+    </script>
+
+    
+</body>
+</html>

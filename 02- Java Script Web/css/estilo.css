@@ -1,0 +1,17 @@
+.fundo1{
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+.fundo2{
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+body, html{
+    height: 100%;
+    margin: 0;
+}
+
+button{
+    margin: 10px;
+    padding: 10px;
+}

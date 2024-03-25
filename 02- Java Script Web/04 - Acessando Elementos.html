@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevenção de Comportamentos</title>
+</head>
+<body>
+
+    <h1 id="titulo">Título Padão</h1>
+    <input type="text" id="campo-texto" value = "Exemplo"/>
+    <input type="text" id="campo-texto2" value = "NAN"/>
+
+    <div> Conteúdo da Div 1 </div>
+    <div> Conteúdo da Div 2 </div>
+    <div classe = "classe3"> Conteúdo da Div 3 </div>
+    <div classe = "classe3"> Nova Div 3 </div>
+
+    <script>
+
+        //Buscando elementos por id
+        const titulo = document.getElementById('titulo');
+        console.log(titulo.textContent);
+
+        const campoTexto = document.getElementById ('campo-texto');
+        console.log(campoTexto.value);
+
+        const campoTexto2 = document.getElementById('campo-texto2');
+        campoTexto2.value = 'Texto alterado';
+
+        //Buscando elementos por querySelector
+        const div = document.querySelector('div'); //pega apenas um elemento
+        console.log(div.textContent);
+
+        div.innerHTML = '<h2>Novo conteúdo da div</h2>';
+        div.style.background = 'red';
+
+        const divs = document.querySelectorAll('div') //pega todos os elementos
+        console.log(divs);
+
+        const div3 = document.getElementsByClassName('classe3');
+        console.log(div3);
+
+        const divTag = document.getElementsByTagName('div');
+        console.log(divTag);
+
+    </script>
+
+</body>
+</html>

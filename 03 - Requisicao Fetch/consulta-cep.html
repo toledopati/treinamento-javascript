@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de CEP</title>
+</head>
+<body>
+
+    <h1>Consulta de CEP</h1>
+    <div class="cep-container">
+        CEP: <input type="text" id="cep-input" placeholder="Digite o CEP"><br/>
+        <!-- <button id="cep-search-button">Consultar</button> -->
+        <!-- <div id="cep-result"></div> -->
+        Logradouro: <input type="text" id="logradouro"><br/>
+        Bairro: <input type="text" id="bairro"><br/>
+        Cidade: <input type="text" id="cidade"><br/>
+        Estado: <input type="text" id="estado"><br/>
+    </div>
+
+    <script>
+
+        //document.getElementById('cep-search-button').addEventListener('click',function(){
+
+        document.getElementById('cep-input').addEventListener('blur',function(){ // clicando no tab ou fora dos campos
+
+            const cep = document.getElementById('cep-input').value;
+
+            fetch(`https://viacep.com.br/ws/${cep}/json/`) 
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('logradouro').value = data.logradouro;
+                    document.getElementById('bairro').value = data.bairro;
+                    document.getElementById('cidade').value = data.localidade;
+                    document.getElementById('estado').value = data.uf;
+                })
+                .catch(error => console.log('Deu erro: ' + error)) //Tratando erros
+
+        });
+    
+    </script>
+    
+</body>
+</html>
+
+<!--  
+    ----CLICANDO PELO BOTÃO----
+
+    fetch(`https://viacep.com.br/ws/${cep}/json/`) // Faz a requisição da URL
+        .then(response => response.json()) // Processando a resposta e convertendo para JSON
+        //.then(data => console.log(data.bairro)) // Acessando ou Exibindo os dados (ele pula se tiver erro)
+        .then(data => {
+            document.getElementById('cep-result').innerHTML = `
+                <p><b>CEP:</b> ${data.cep}</p>
+                <p><b>Logradouro:</b> ${data.logradouro}</p>
+                <p><b>Bairro:</b> ${data.bairro}</p>
+                <p><b>Cidade:</b> ${data.localidade}</p>
+                <p><b>Estado:</b> ${data.uf}</p> -->

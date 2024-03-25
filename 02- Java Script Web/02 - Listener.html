@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Delegação de Eventos</title>
+</head>
+<body>
+
+    <button id="bnt-1">Botão 1</button>
+    <button id="bnt-2">Botão 2</button>
+    <button id="bnt-3">Botão 3</button>
+
+    <script>
+
+        document.body.addEventListener('click',function(event){
+            if(event.target.tagName === 'BUTTON'){
+                alert('Clicou no ' + event.target.textContent);
+                event.target.textContent = 'Botão já clicado';
+            }
+        });
+
+    </script>
+
+<script src="js/listener.js"></script>    
+</body>
+</html>

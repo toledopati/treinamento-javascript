@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Filtrar Tabela com thead e tbody - JavaScript Moderno</title>
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<div>
+  <input type="text" id="filtro" onkeyup="filtrarTabelaModerno();" placeholder="Digite para filtrar...">
+</div>
+
+<table id="tabela">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Telefone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>João Silva</td>
+      <td>joao.silva@example.com</td>
+      <td>(11) 99999-9999</td>
+    </tr>
+    <tr>
+      <td>Maria Oliveira</td>
+      <td>maria.oliveira@example.com</td>
+      <td>(22) 88888-8888</td>
+    </tr>
+    <tr>
+      <td>Lucas Santos</td>
+      <td>lucas.santos@example.com</td>
+      <td>(33) 77777-7777</td>
+    </tr>
+  </tbody>
+</table>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

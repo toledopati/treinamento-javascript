@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alteração de Fundo</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <button id="botao1">Fundo 1</button>
+    <button id="botao2">Fundo 2</button>
+
+    <script>
+
+    //const botao1 = document.getElementById('botao1');
+
+    document.getElementById('botao1').addEventListener('click', function(){
+        document.body.classList.remove('fundo2');
+        document.body.classList.add('fundo1');
+    });
+
+    document.getElementById('botao2').addEventListener('click', function(){
+        document.body.classList.remove("fundo1");
+        document.body.classList.add('fundo2');
+    });
+ 
+    </script>
+
+</body>
+</html>

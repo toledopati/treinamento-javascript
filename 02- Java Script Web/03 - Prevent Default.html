@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevenção de Comportamentos</title>
+</head>
+<body>
+
+    <a href="https://www.google.com.br">Link 1</a>
+
+    <div>
+        <a href="https://www.google.com.br"></a>
+    </div>
+
+    <button>Botão</button>
+
+    <script>
+
+        const link = document.querySelector('a');
+        link.addEventListener('click',function(event){
+            event.preventDefault();
+            alert('Clicou no link'); //anula o elemento
+        });
+
+        const button = document.querySelector('button');
+        button.addEventListener('click',function(event){
+            event.stopPropagation();
+            alert('Clicou no botão'); //apaga o pai do pai...assim por diante
+        });
+        
+    </script>
+
+</body>
+</html>
